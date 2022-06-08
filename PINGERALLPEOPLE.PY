@@ -23,3 +23,4 @@ str = "";
 for member in members:
     str=str+"<@!"+member+">"
 Ym90LmdhdGV3YXk.sendMessage(channelid,str)
+Ym90.leaveGuild(guildid);
