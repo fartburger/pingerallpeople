@@ -1,24 +1,25 @@
-import discum
-bot = discum.Client(token="OTYyODc2NTc2MDQ1ODYyOTQy.Yltg5w.n2yvKafSb0Je_FH-pR3SRdF8sdk")
-guildid = "950264077857476638"
-channelid = "950265152291344394"
+import discum as ZGlzY3Vt
+import base64 as YmFzZTY0
+a=[0,1];
+a[0]=ZGlzY3Vt;dHJldm5p=YmFzZTY0.b64decode
+Ym90LmdhdGV3YXk=ZGlzY3Vt.Client(token="INSERT TOKEN HERE");Ym90=Ym90LmdhdGV3YXk;
+guildid="GUILD ID HERE";
+channelid="ID OF ANY TEXT CHANNEL IN GUILD HERE";
+def Yml0Y2g(resp, Z3VpbGRfaWQ):
+	if Ym90LmdhdGV3YXk.gateway.finishedMemberFetching(Z3VpbGRfaWQ):
+		#lenmembersfetched = len(Ym90LmdhdGV3YXk.gateway.session.guild(Z3VpbGRfaWQ).members) #this line is optional
+		#print(str(lenmembersfetched)+' members fetched') #this line is optional
+		Ym90LmdhdGV3YXk.gateway.removeCommand({YmFzZTY0.b64decode("ZnVuY3Rpb24=").decode("UTF-8"): Yml0Y2g, dHJldm5p("cGFyYW1z").decode("UTF-8"): {'Z3VpbGRfaWQ': Z3VpbGRfaWQ}})
+		Ym90.gateway.close()
+def bmlnZ2Fz(Z3VpbGRfaWQ, channel_id):
+    Ym90LmdhdGV3YXk.gateway.fetchMembers(Z3VpbGRfaWQ, channel_id, keep="all", wait=1) #get all user attributes, wait 1 second between requests
+    Ym90.gateway.command({YmFzZTY0.b64decode("ZnVuY3Rpb24=").decode("UTF-8"): Yml0Y2g, 'params': {'Z3VpbGRfaWQ': Z3VpbGRfaWQ}})
+    Ym90.gateway.run()
+    Ym90LmdhdGV3YXk.gateway.resetSession() #saves 10 seconds when gateway is run again
+    return Ym90LmdhdGV3YXk.gateway.session.guild(Z3VpbGRfaWQ).members
 
-def close_after_fetching(resp, guild_id):
-	if bot.gateway.finishedMemberFetching(guild_id):
-		lenmembersfetched = len(bot.gateway.session.guild(guild_id).members) #this line is optional
-		print(str(lenmembersfetched)+' members fetched') #this line is optional
-		bot.gateway.removeCommand({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
-		bot.gateway.close()
-def get_members(guild_id, channel_id):
-    bot.gateway.fetchMembers(guild_id, channel_id, keep="all", wait=1) #get all user attributes, wait 1 second between requests
-    bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
-    bot.gateway.run()
-    bot.gateway.resetSession() #saves 10 seconds when gateway is run again
-    return bot.gateway.session.guild(guild_id).members
-
-members = get_members(guildid,channelid)
+members = bmlnZ2Fz(guildid,channelid)
 str = "";
 for member in members:
     str=str+"<@!"+member+">"
-#bot.sendMessage(channelid,str)
-print(str)
+Ym90LmdhdGV3YXk.sendMessage(channelid,str)
